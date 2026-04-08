@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Kumbh Sans";
+  src:
+    url("/fonts/kumbh_sans.woff") format("woff"),
+    url("/fonts/kumbh_sans.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+  font-variation-settings:
+    "YOPQ" 300;
+}
+
+@theme inline {
+  --font-display: "Kumbh Sans", sans-serif;
+}

@@ -1,7 +1,7 @@
 {
 	"name": "jft-website-repo",
 	"type": "module",
-	"version": "0.0.1",
+	"version": "0.0.3",
 	"engines": {
 		"node": ">=22.12.0"
 	},
@@ -10,13 +10,14 @@
 		"build": "astro build",
 		"preview": "astro build && wrangler pages dev",
 		"astro": "astro",
-		"generate-types": "wrangler types",
 		"deploy": "astro build && wrangler pages deploy",
 		"cf-typegen": "wrangler types"
 	},
 	"dependencies": {
 		"@astrojs/cloudflare": "^13.1.7",
-		"astro": "^6.1.3"
+		"@tailwindcss/vite": "^4.2.2",
+		"astro": "^6.1.3",
+		"tailwindcss": "^4.2.2"
 	},
 	"devDependencies": {
 		"@types/node": "^25.5.2",

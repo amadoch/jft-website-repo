@@ -1,0 +1,66 @@
+---
+import fetchApi, { parseMediaContent } from "../lib/strapi-handler";
+import type { Layout } from "../interfaces/layout";
+import "../styles/global.css";
+
+const { titulo, numero_de_contactos, barra_de_navegacion, pie_de_pagina } =
+  await fetchApi<Layout>({
+    endpoint: "/global",
+    wrappedByKey: "data",
+  });
+
+const image = parseMediaContent(barra_de_navegacion.logo.imagen.url);
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{titulo}</title>
+  </head>
+  <body class="font-display">
+    <header>
+      {
+        numero_de_contactos.campo_telefono.map((campo) => (
+          <p>{campo.numero_telefonico}</p>
+        ))
+      }
+    </header>
+    <header>
+      <img src={image} alt={barra_de_navegacion.logo.texto_alternativo} />
+      <p>
+        {barra_de_navegacion.titulo}
+      </p>
+      <nav>
+        <ul>
+          {
+            barra_de_navegacion.navegacion.map((enlace) => (
+              <li>
+                <a href={enlace.href}>{enlace.etiqueta}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <p>
+        {pie_de_pagina.derechos_de_autor}
+      </p>
+      <ul>
+        {
+          pie_de_pagina.navegacion.map((enlace) => (
+            <li>
+              <a href={enlace.href}>{enlace.etiqueta}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </footer>
+  </body>
+</html>
