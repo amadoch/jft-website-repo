@@ -9,11 +9,14 @@
 	"compatibility_flags": [
 		"nodejs_compat"
 	],
-	"pages_build_output_dir": "./dist",
 	"observability": {
 		"enabled": true
 	},
 	"upload_source_maps": true,
+	"assets": {
+		"directory": "./dist/",
+		"binding": "ASSETS"
+	}
 	/**
 	 * Smart Placement
 	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
