@@ -1,15 +1,6 @@
 ---
-import fetchApi, { parseMediaContent } from "../lib/strapi-handler";
-import type { Layout } from "../interfaces/layout";
 import "../styles/global.css";
 
-const { titulo, numero_de_contactos, barra_de_navegacion, pie_de_pagina } =
-  await fetchApi<Layout>({
-    endpoint: "/global",
-    wrappedByKey: "data",
-  });
-
-const image = parseMediaContent(barra_de_navegacion.logo.imagen.url);
 ---
 
 <html lang="es">
@@ -18,54 +9,14 @@ const image = parseMediaContent(barra_de_navegacion.logo.imagen.url);
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
-    <title>{titulo}</title>
+    <title>U.E.E Dr José Francisco Torrealba</title>
   </head>
-  <body class="font-display flex flex-col flex-nowrap min-w-96 max-w-dvw">
-    <header class="flex flex-row flex-nowrap items-start gap-2 min-w-fit px-4 py-2 border-2 text-xl text-start">
-      {
-        numero_de_contactos.campo_telefono.map((campo) => (
-          <p class="align-baseline">{campo.numero_telefonico}</p>
-        ))
-      }
-    </header>
-    <header class="flex flex-row flex-nowrap justify-center mx-auto">
-      <figure class="shrink-0 grow">
-        <img class="w-16 md:w-20 lg:w-28" src={image} alt={barra_de_navegacion.logo.texto_alternativo} />
-      </figure>
-      <div class="flex flex-col flex-nowrap justify-center gap-y-2">
-        <p class="text-2xl text-center my-2">
-          {barra_de_navegacion.titulo}
-        </p>
-        <nav class="grow-0 shrink-0 my-2">
-          <ul class="flex flex-row flex-wrap px-4 gap-x-2">
-            {
-              barra_de_navegacion.navegacion.map((enlace) => (
-                <li class="flex-1 text-center">
-                  <a href={enlace.href}>{enlace.etiqueta}</a>
-                </li>
-              ))
-            }
-          </ul>
-        </nav>
-      </div>
-    </header>
+  <body class="">
+    <!-- header -->
     <main class="h-dvh">
       <slot />
     </main>
-    <footer class="flex flex-col flex-nowrap gap-2 px-4 py-2">
-      <ul class="flex flex-col flex-nowrap">
-        {
-          pie_de_pagina.navegacion.map((enlace) => (
-            <li class="flex-1/4">
-              <a href={enlace.href}>{enlace.etiqueta}</a>
-            </li>
-          ))
-        }
-      </ul>
-      <p class="font-bold">
-        {pie_de_pagina.derechos_de_autor}
-      </p>
-    </footer>
+    <!-- footer -->
   </body>
 </html>
 

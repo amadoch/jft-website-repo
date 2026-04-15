@@ -1,7 +1,7 @@
 {
 	"name": "jft-website-repo",
 	"type": "module",
-	"version": "0.0.3",
+	"version": "2026.04.15",
 	"engines": {
 		"node": ">=22.12.0"
 	},
