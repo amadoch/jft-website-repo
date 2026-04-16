@@ -31,8 +31,8 @@ export default defineConfig({
         variants: [
           {
             src: [
-              './src/assets/fonts/kumbh_sans.woff',
-              './src/assets/fonts/kumbh_sans.ttf'
+              './src/assets/fonts/kumbh-sans.woff',
+              './src/assets/fonts/kumbh-sans.ttf'
             ],
             weight: '100 900',
             style: 'normal'

@@ -1,0 +1,95 @@
+---
+import Layout from "../layouts/layout.astro";
+import { MapPinXInsideIcon, CircleQuestionMarkIcon } from "@lucide/astro";
+---
+
+<Layout>
+  <article class="err-page">
+    <header class="err-header">
+      <hgroup class="title">
+        <h1>404</h1>
+        <MapPinXInsideIcon />
+      </hgroup>
+      <h2 class="subtitle">Disculpe...</h2>
+      <p>La página que usted busca no existe</p>
+    </header>
+    <section class="err-content">
+      <ul class="list">
+        <li class="item">
+          <CircleQuestionMarkIcon />
+          <p>
+            Debes revisar que hayas escrito bien la dirección url; Aun si el
+            enlace es correcto, quizas el nombre del recurso o del sitio buscado
+            haya sido cambiado.
+          </p>
+        </li>
+        <li class="item">
+          <CircleQuestionMarkIcon />
+          <p>
+            Puede ser que el contenido, ya no se encuentre disponible en el
+            sitio indefinidamente.
+          </p>
+        </li>
+      </ul>
+    </section>
+  </article>
+</Layout>
+
+<style>
+  @reference "#app.css";
+
+  .err-page {
+    @apply flex
+      flex-col
+      justify-center
+      items-center
+      gap-y-8
+      mx-auto;
+  }
+
+  .err-header {
+    @apply flex
+      flex-col
+      flex-nowrap
+      gap-y-2;
+
+    .title {
+      @apply flex
+        flex-row
+        flex-nowrap
+        gap-x-0.5
+        font-bold
+        text-mocha-950;
+    }
+
+    .subtitle {
+      @apply mb-2
+      font-bold
+      text-pinkish-600;
+    }
+
+    .subtitle + p {
+      @apply text-pinkish-400;
+    }
+  }
+
+  .err-content {
+    @apply flex
+      flex-col
+      flex-nowrap;
+  }
+
+  .item {
+    @apply flex
+      flex-row
+      flex-wrap
+      items-center
+      gap-x-4
+      text-balance
+      whitespace-pre-line;
+  }
+
+  .list > :last-child {
+    @apply mt-5;
+  }
+</style>
