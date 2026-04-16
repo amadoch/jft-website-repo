@@ -1,0 +1,33 @@
+---
+import { CopyrightIcon } from "@lucide/astro";
+---
+
+<div class="copyright">
+  <span>
+    <CopyrightIcon class="icon" size="20" />
+  </span>
+  <p>
+    derechos reservados. u.e.e "dr. josé francisco torrealba"</p>
+</div>
+
+<style>
+  @reference "#app.css";
+
+  .copyright {
+    @apply flex
+      min-w-fit
+      justify-center
+      items-center
+      gap-x-2
+      py-2
+      px-4
+    bg-roast-950;
+
+    .icon, 
+    p {
+      @apply text-roast-50
+        text-xs
+        capitalize;
+    }
+  }
+</style>

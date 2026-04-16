@@ -1,17 +1,133 @@
 @import "tailwindcss";
+@import "tw-animations";
 
-@font-face {
-  font-family: "Kumbh Sans";
-  src:
-    url("/fonts/kumbh_sans.woff") format("woff"),
-    url("/fonts/kumbh_sans.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: fallback;
-  font-variation-settings:
-    "YOPQ" 300;
+:root {
+  --scale-paragraph: 1.25;
+  --scale-paragraph-lg: 1.375;
 }
 
 @theme inline {
-  --font-display: "Kumbh Sans", sans-serif;
+  /* resets css */
+  --radius-*: initial;
+  --text-*: initial;
+
+  --font-sans: var(--font-kumbh-sans);
+
+  /* colores */
+  --color-roast-50: oklch(0.932 0.017 286.12);
+  --color-roast-100: oklch(0.863 0.037 285.62);
+  --color-roast-200: oklch(0.737 0.073 284.47);
+  --color-roast-300: oklch(0.602 0.113 282.48);
+  --color-roast-400: oklch(0.468 0.138 279.64);
+  --color-roast-500: oklch(0.335 0.113 278.39);
+  --color-roast-600: oklch(0.192 0.064 278.51);
+  --color-roast-700: oklch(0.17 0.056 278.63);
+  --color-roast-800: oklch(0.154 0.052 278.44);
+  --color-roast-900: oklch(0.109 0.035 278.99);
+  --color-roast-950: oklch(0.109 0.035 278.99);
+  --color-mocha-50: oklch(0.982 0.02 91.54);
+  --color-mocha-100: oklch(0.974 0.032 95.36);
+  --color-mocha-200: oklch(0.947 0.07 95.91);
+  --color-mocha-300: oklch(0.912 0.135 98.48);
+  --color-mocha-400: oklch(0.887 0.132 98.59);
+  --color-mocha-500: oklch(0.766 0.114 98.9);
+  --color-mocha-600: oklch(0.637 0.094 98.49);
+  --color-mocha-700: oklch(0.515 0.076 98.2);
+  --color-mocha-800: oklch(0.388 0.058 99.29);
+  --color-mocha-900: oklch(0.267 0.039 99.99);
+  --color-mocha-950: oklch(0.199 0.029 99.24);
+  --color-pinkish-50: oklch(0.958 0.012 11.15);
+  --color-pinkish-100: oklch(0.917 0.026 11.68);
+  --color-pinkish-200: oklch(0.835 0.055 11.17);
+  --color-pinkish-300: oklch(0.744 0.095 12.1);
+  --color-pinkish-400: oklch(0.666 0.139 12.61);
+  --color-pinkish-500: oklch(0.58 0.155 13.39);
+  --color-pinkish-600: oklch(0.491 0.132 13.05);
+  --color-pinkish-700: oklch(0.41 0.109 13.24);
+  --color-pinkish-800: oklch(0.32 0.086 13.03);
+  --color-pinkish-900: oklch(0.232 0.063 12.63);
+  --color-pinkish-950: oklch(0.183 0.05 12.61);
+  /* tipografias */
+  /* parrafos */
+  --text-xs: calc(1rem / var(--scale-paragraph));
+  --text-xs--line-height: 1.25;
+  --text-sm: 1rem;
+  --text-sm--line-height: 1.5;
+  --text-base: calc(1rem * var(--scale-paragraph));
+  --text-base--line-height: 1.4;
+  --text-lg: calc(1rem * var(--scale-paragraph-lg));
+  --text-lg--line-height: 1.35;
+  /* cabeceras */
+  --text-h6: calc(var(--text-base) * var(--scale-paragraph));
+  --text-h6--line-height: 1;
+  --text-h5: calc(var(--text-h6) * var(--scale-paragraph));
+  --text-h5--line-height: 1;
+  --text-h4: calc(var(--text-h5) * var(--scale-paragraph));
+  --text-h4--line-height: 1;
+  --text-h3: calc(var(--text-h4) * var(--scale-paragraph));
+  --text-h3--line-height: 1;
+  --text-h2: calc(var(--text-h3) * var(--scale-paragraph));
+  --text-h2--line-height: 1;
+  --text-h1: calc(var(--text-h2) * var(--scale-paragraph));
+  --text-h1--line-height: 1;
+}
+
+@layer component {
+  h1 {
+    @apply text-h1;
+  }
+  h2 {
+    @apply text-h2;
+  }
+  h3 {
+    @apply text-h3;
+  }
+  h4 {
+    @apply text-h4;
+  }
+  h5 {
+    @apply text-h5;
+  }
+  h6 {
+    @apply text-h6;
+  }
+
+  .button {
+    @apply cursor-pointer
+      text-sm
+      text-center
+      bg-pinkish-500
+      text-pinkish-100
+      py-2
+      px-4
+      transition-colors;
+
+    &:hover {
+      @apply bg-pinkish-800
+      text-pinkish-50;
+    }
+
+    &:active {
+      @apply animate-heartbeat
+        animate-duration-300;
+    }
+
+    &:disabled {
+      @apply bg-pinkish-300
+        text-pinkish-100;
+    }
+  }
+
+  .button[data-size="md" i] {
+    @apply px-6;
+  }
+
+  .button[data-size="lg" i] {
+    @apply py-4
+      px-8;
+  }
+}
+
+body {
+  @apply text-base;
 }

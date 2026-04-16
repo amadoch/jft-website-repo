@@ -1,0 +1,47 @@
+<header class="navbar">
+  <div class="nv-logo">LOGO</div>
+  <div class="nv-container">
+    <p class="nv-title">u.e.e "dr. josé francisco torrealba"</p>
+    <nav aria-role="navigation">
+      <a class="button">Principal</a>
+      <a class="button">Contacto</a>
+      <a class="button">Formación</a>
+      <a class="button">Comunicados</a> 
+      <a class="button">Calendario</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  @reference "#app.css";
+
+  .navbar {
+    @apply min-w-fit
+      flex
+      flex-row
+      shrink-0
+      grow-0
+      gap-x-2
+      my-4
+      px-2
+      justify-center
+      items-center;
+  }
+
+  .nv-container > * + * {
+    @apply py-4;
+  }
+
+  .nv-list {
+    @apply flex
+      flex-row
+      grow
+      shrink
+      px-2;
+  }
+
+  .nv-title {
+    @apply text-center text-h6 capitalize;
+  }
+
+</style>

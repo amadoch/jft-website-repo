@@ -1,0 +1,7 @@
+---
+const { size, ...rest } = Astro.props;
+---
+
+<button data-size={size} {...rest}>
+  <slot />
+</button>
