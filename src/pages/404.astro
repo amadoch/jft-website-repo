@@ -4,8 +4,8 @@ import { MapPinXInsideIcon, CircleQuestionMarkIcon } from "@lucide/astro";
 ---
 
 <Layout>
-  <article class="err-page">
-    <header class="err-header">
+  <div class="page-display">
+    <header class="flex-content-sm flex-nowrap">
       <hgroup class="title">
         <h1>404</h1>
         <MapPinXInsideIcon />
@@ -13,18 +13,16 @@ import { MapPinXInsideIcon, CircleQuestionMarkIcon } from "@lucide/astro";
       <h2 class="subtitle">Disculpe...</h2>
       <p>La página que usted busca no existe</p>
     </header>
-    <section class="err-content">
-      <ul class="list">
+    <section class="flex-content-lg">
+      <ul class="flex-content-md">
         <li class="item">
-          <CircleQuestionMarkIcon />
           <p>
-            Debes revisar que hayas escrito bien la dirección url; Aun si el
+            Debes revisar que hayas escrito bien la dirección url; Aún si el
             enlace es correcto, quizas el nombre del recurso o del sitio buscado
             haya sido cambiado.
           </p>
         </li>
         <li class="item">
-          <CircleQuestionMarkIcon />
           <p>
             Puede ser que el contenido, ya no se encuentre disponible en el
             sitio indefinidamente.
@@ -32,51 +30,29 @@ import { MapPinXInsideIcon, CircleQuestionMarkIcon } from "@lucide/astro";
         </li>
       </ul>
     </section>
-  </article>
+  </div>
 </Layout>
 
 <style>
   @reference "#app.css";
 
-  .err-page {
+  .title {
     @apply flex
-      flex-col
-      justify-center
-      items-center
-      gap-y-8
-      mx-auto;
-  }
-
-  .err-header {
-    @apply flex
-      flex-col
+      flex-row
       flex-nowrap
-      gap-y-2;
-
-    .title {
-      @apply flex
-        flex-row
-        flex-nowrap
-        gap-x-0.5
-        font-bold
-        text-mocha-950;
-    }
-
-    .subtitle {
-      @apply mb-2
+      gap-x-0.5
       font-bold
-      text-pinkish-600;
-    }
-
-    .subtitle + p {
-      @apply text-pinkish-400;
-    }
+      text-mocha-950;
   }
 
-  .err-content {
-    @apply flex
-      flex-col
-      flex-nowrap;
+  .subtitle {
+    @apply mb-2
+    font-bold
+    text-pinkish-600;
+  }
+
+  .subtitle + p {
+    @apply text-pinkish-400;
   }
 
   .item {
@@ -85,11 +61,9 @@ import { MapPinXInsideIcon, CircleQuestionMarkIcon } from "@lucide/astro";
       flex-wrap
       items-center
       gap-x-4
+      px-8
       text-balance
-      whitespace-pre-line;
-  }
-
-  .list > :last-child {
-    @apply mt-5;
+      whitespace-pre-line
+      text-roast-500;
   }
 </style>

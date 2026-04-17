@@ -1,0 +1,35 @@
+---
+import Layout from "../layouts/layout.astro";
+---
+
+<Layout>
+  <div class="page-display">
+  <div class="flex-content-lg items-start w-min-content">
+    <header>
+      <h1 class="title">Estudios</h1>
+    </header>
+    <section class="flex-content-md">
+      <h2 class="subtitle">Educación<br />Preescolar</h2>
+      Contenido
+    </section>
+    <section class="flex-content-md">
+      <h2 class="subtitle">Educación<br />Primaria</h2>
+      Contenido
+    </section>
+  </div>
+  </div>
+</Layout>
+
+<style>
+  @reference "#app.css";
+
+  .title {
+    @apply font-bold
+      text-mocha-950;
+  }
+
+  .subtitle {
+    @apply font-bold
+      text-mocha-950;
+  }
+</style>

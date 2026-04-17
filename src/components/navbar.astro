@@ -39,7 +39,6 @@ import logo from '../assets/images/logo.jpg'
     @apply flex
       flex-row
       my-4
-      gap-x-4
       justify-center
       items-center;
   }
@@ -90,15 +89,25 @@ import logo from '../assets/images/logo.jpg'
 
 <script>
   class Navigator extends HTMLElement {
+    toggleButton: Element | null
+    menu: Element | null
+
+    toggleHandler = () => {
+        this.menu?.classList.toggle('closed')
+    }
+
+    constructor() {
+      super()
+      this.toggleButton = this.querySelector('#toggle')
+      this.menu = this.querySelector('#menu')
+    }
+
     connectedCallback() {
-      const toggleButton = this.querySelector('#toggle')
-      const menu = this.querySelector('#menu')
+      this.toggleButton?.addEventListener('click', this.toggleHandler)
+    }
 
-      const toggleHandler = () => {
-        menu?.classList.toggle('closed')
-      }
-
-      toggleButton?.addEventListener('click', toggleHandler)
+    disconnectedCallback() {
+      this.toggleButton?.removeEventListener('click', this.toggleHandler)
     }
   }
 

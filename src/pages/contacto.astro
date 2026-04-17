@@ -1,0 +1,43 @@
+---
+import Layout from "../layouts/layout.astro";
+---
+
+<Layout>
+  <div class="page-display">
+  <div class="flex-content-lg items-start w-min">
+    <header>
+      <h1 class="title">Contactos</h1>
+    </header>
+    <section class="flex-content-md">
+      <h2 class="subtitle">Horario de atención</h2>
+      <ul class="flex-content-sm">
+        <li>Lunes a Viernes</li>
+        <li>9:00 AM</li>
+        <li>12:00 PM</li>
+      </ul>
+    </section>
+    <section class="flex-content-md">
+      <h2 class="subtitle">Números de contacto</h2>
+      <ul class="flex-content-sm">
+        <li>+58 0246-178.68.33</li>
+        <li>+58 0254-486.48.54</li>
+      </ul>
+    </section>
+  </div>
+  </div>
+</Layout>
+
+<style>
+  @reference "#app.css";
+
+  .title {
+    @apply font-bold
+      text-mocha-950;
+  }
+
+  .subtitle {
+    @apply font-bold
+      text-roast-500
+        text-h3;
+  }
+</style>

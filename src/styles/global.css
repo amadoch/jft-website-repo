@@ -2,8 +2,10 @@
 @import "tw-animations";
 
 :root {
+  --size-base: 1rem;
   --scale-paragraph: 1.25;
-  --scale-paragraph-lg: 1.375;
+  --header-line-height: 1;
+  --resize-factor: 5.88280647vw;
 }
 
 @theme inline {
@@ -49,47 +51,47 @@
   --color-pinkish-950: oklch(0.183 0.05 12.61);
   /* tipografias */
   /* parrafos */
-  --text-xs: calc(1rem / var(--scale-paragraph));
+  --text-xs: calc(var(--text-sm) / var(--scale-paragraph));
   --text-xs--line-height: 1.25;
-  --text-sm: 1rem;
+  --text-sm: var(--size-base);
   --text-sm--line-height: 1.5;
-  --text-base: calc(1rem * var(--scale-paragraph));
+  --text-base: calc(var(--text-sm) * var(--scale-paragraph));
   --text-base--line-height: 1.4;
-  --text-lg: calc(1rem * var(--scale-paragraph-lg));
-  --text-lg--line-height: 1.35;
+  --text-emphasis: calc(var(--text-sm) * var(--scale-paragraph));
+  --text-emphasis--line-height: 1.325;
   /* cabeceras */
   --text-h6: calc(var(--text-base) * var(--scale-paragraph));
-  --text-h6--line-height: 1;
+  --text-h6--line-height: var(--header-line-height);
   --text-h5: calc(var(--text-h6) * var(--scale-paragraph));
-  --text-h5--line-height: 1;
+  --text-h5--line-height: var(--header-line-height);
   --text-h4: calc(var(--text-h5) * var(--scale-paragraph));
-  --text-h4--line-height: 1;
+  --text-h4--line-height: var(--header-line-height);
   --text-h3: calc(var(--text-h4) * var(--scale-paragraph));
-  --text-h3--line-height: 1;
+  --text-h3--line-height: var(--header-line-height);
   --text-h2: calc(var(--text-h3) * var(--scale-paragraph));
-  --text-h2--line-height: 1;
+  --text-h2--line-height: var(--header-line-height);
   --text-h1: calc(var(--text-h2) * var(--scale-paragraph));
-  --text-h1--line-height: 1;
+  --text-h1--line-height: var(--header-line-height);
 }
 
 @layer component {
   h1 {
-    @apply text-h1;
+    @apply text-h3 md:text-h1;
   }
   h2 {
-    @apply text-h2;
+    @apply text-h4 md:text-h2;
   }
   h3 {
-    @apply text-h3;
+    @apply text-h6 md:text-h3;
   }
   h4 {
-    @apply text-h4;
+    @apply text-h5 md:text-h4;
   }
   h5 {
-    @apply text-h5;
+    @apply text-emphasis md:text-h5;
   }
   h6 {
-    @apply text-h6;
+    @apply text-emphasis md:text-h6;
   }
 
   .button {
@@ -126,8 +128,32 @@
     @apply py-4
       px-8;
   }
+
+  .page-display {
+    @apply flex
+      flex-col
+      justify-center
+      items-center
+      py-8;
+  }
+
+  [class|="flex-content"] {
+    @apply flex flex-col;
+
+    &[class*="sm"] {
+      @apply gap-y-2;
+    }
+
+    &[class*="md"] {
+      @apply gap-y-4;
+    }
+
+    &[class*="lg"] {
+      @apply gap-y-6;
+    }
+  }
 }
 
 body {
-  @apply text-base;
+  @apply text-sm md:text-base;
 }
