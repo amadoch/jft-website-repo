@@ -152,6 +152,22 @@
       @apply gap-y-6;
     }
   }
+
+  [class|="flex-content-row"] {
+    @apply flex flex-row;
+
+    &[class*="sm"] {
+      @apply gap-x-2;
+    }
+
+    &[class*="md"] {
+      @apply gap-x-4;
+    }
+
+    &[class*="lg"] {
+      @apply gap-x-6;
+    }
+  }
 }
 
 body {

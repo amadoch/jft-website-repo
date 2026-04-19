@@ -15,9 +15,13 @@
 	},
 	"dependencies": {
 		"@astrojs/cloudflare": "^13.1.7",
+		"@astrojs/preact": "^5.1.1",
 		"@lucide/astro": "^1.8.0",
+		"@preact/signals": "^2.9.0",
 		"@tailwindcss/vite": "^4.2.2",
 		"astro": "^6.1.3",
+		"lucide-preact": "^1.8.0",
+		"preact": "^10.29.1",
 		"tailwindcss": "^4.2.2",
 		"tw-animations": "^2.0.0"
 	},
@@ -26,7 +30,9 @@
 		"wrangler": "^4.80.0"
 	},
 	"overrides": {
-		"vite": "^7"
+		"vite": "^7",
+		"react": "npm:@preact/compat@latest",
+		"react-dom": "npm:@preact/compat@latest"
 	},
 	"imports": {
 		"#app.css": "./src/styles/global.css"

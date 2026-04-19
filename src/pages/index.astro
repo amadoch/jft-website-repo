@@ -1,19 +1,35 @@
 ---
-import Layout from '../layouts/layout.astro'
-import Button from '../components/button.astro'
+import Layout from "../layouts/layout.astro";
+import { Accordion } from "../components/accordion.tsx";
 ---
 
 <Layout>
-	<div class="page">
-		<h1>Hola mundo</h1>
-		<p>Contenido para todos</p>
-		<hgroup>
-			<h2>Esto no debe verse en produción</h2>
-			<p>TopSecret</p>
-		</hgroup>
-		<section>
-			<p>Bloque de contenido</p>
-			<button class="button" data-size="">Hola</button>
-		</section>
-	</div>
+  <div class="page">
+    <h1>Hola mundo</h1>
+    <p>Contenido para todos</p>
+    <hgroup>
+      <h2>Esto no debe verse en produción</h2>
+      <p>TopSecret</p>
+    </hgroup>
+    <Accordion label="TopSecret" client:load>
+      <section>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae,
+          sed. Debitis, non veritatis soluta quae quibusdam, laudantium quidem
+          odio est provident iste rerum! Cumque deleniti nemo doloribus esse rem
+          accusamus!
+        </p>
+      </section>
+    </Accordion>
+    <Accordion label="TopSecret" client:load>
+      <section>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae,
+          sed. Debitis, non veritatis soluta quae quibusdam, laudantium quidem
+          odio est provident iste rerum! Cumque deleniti nemo doloribus esse rem
+          accusamus!
+        </p>
+      </section>
+    </Accordion>
+  </div>
 </Layout>
