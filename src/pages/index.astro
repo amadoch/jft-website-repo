@@ -1,35 +1,91 @@
 ---
 import Layout from "../layouts/layout.astro";
-import { Accordion } from "../components/accordion.tsx";
+import frImgUno from "../assets/images/fr-img-uno.webp";
+import frImgDos from "../assets/images/fr-img-dos.webp";
+import heroImg from "../assets/images/hero-img.webp";
+import { Picture } from "astro:assets";
 ---
 
 <Layout>
-  <div class="page">
-    <h1>Hola mundo</h1>
-    <p>Contenido para todos</p>
-    <hgroup>
-      <h2>Esto no debe verse en produción</h2>
-      <p>TopSecret</p>
-    </hgroup>
-    <Accordion label="TopSecret" client:load>
-      <section>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae,
-          sed. Debitis, non veritatis soluta quae quibusdam, laudantium quidem
-          odio est provident iste rerum! Cumque deleniti nemo doloribus esse rem
-          accusamus!
-        </p>
-      </section>
-    </Accordion>
-    <Accordion label="TopSecret" client:load>
-      <section>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae,
-          sed. Debitis, non veritatis soluta quae quibusdam, laudantium quidem
-          odio est provident iste rerum! Cumque deleniti nemo doloribus esse rem
-          accusamus!
-        </p>
-      </section>
-    </Accordion>
+  <div class="page-display">
+    <div class="flex-content-lg mb-16">
+    <Picture
+      src={heroImg}
+      widths={[900, 1080]}
+      class="object-cover aspect-4/3 md:aspect-12/4"
+      priority
+      alt="Vista frontal del u.e.e 'dr. josé francisco torrealba'"
+    />
+    <h1 class="hero-title">U.E.E<br />Dr. José Francisco Torrealba</h1>
+    </div>
+    <section class="flex-content-lg items-center mb-8">
+      <h2 class="section-title">Formación Académica</h2>
+      <div class="flex-content-row-md not-md:flex-wrap w-full">
+        <Picture
+          src={frImgUno}
+          alt="Jovenes celebrando promoción 53 del colegio"
+          height={240}
+          format="webp"
+          priority
+        />
+        <hgroup class="flex-content-sm">
+          <h3 class="text-h4 self-start section-subtitle">
+            Educación Primaria
+          </h3>
+          <p>
+            Formación de jovenes con valores ciudadanos que buscan igualdad,
+            conocimiento y respeto mutuo, involucrados desde una edad temprana
+            en el desarrollo del entorno y la sociedad venezolana.
+          </p>
+        </hgroup>
+      </div>
+      <div class="flex-content-row-md not-md:flex-wrap w-full">
+        <Picture
+          src={frImgDos}
+          alt="Jovenes celebrando promoción 53 del colegio"
+          height={240}
+          format="webp"
+          priority
+        />
+        <hgroup class="flex-content-sm">
+          <h3 class="text-h4 self-start section-subtitle">Preescolar</h3>
+          <p>
+            Formación desde la infancia temprana valores como: la cooperación,
+            afecto, moralidad cumpliendo ciertas pautas de comportamiento dentro
+            del ambiente social.
+          </p>
+        </hgroup>
+      </div>
+
+      <a href="/formacion" class="button text-sm md:text-base">
+        Oferta académica y requisitos para la inscripción
+      </a>
+    </section>
+    <section class="flex-content-lg">
+      <h2 class="section-title">Comunicados</h2>
+    </section>
+    <section class="flex-content-lg">
+      <h2 class="section-title">Calendario Académico</h2>
+      <div class="flex-content-md"></div>
+      <button type="button" class="button text-sm md:text-base">
+        Ver Calendario académico
+      </button>
+    </section>
   </div>
 </Layout>
+
+<style>
+  @reference "#app.css";
+
+  .hero-title {
+    @apply font-bold mb-8 text-mocha-900;
+  }
+
+  .section-title {
+    @apply font-bold self-start text-mocha-900;
+  }
+
+  .section-subtitle {
+    @apply font-bold text-roast-500;
+  }
+</style>

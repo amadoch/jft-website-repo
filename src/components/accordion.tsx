@@ -14,13 +14,13 @@ export const Accordion = ({label, children}: Accordion) => {
 
   return (
     <div>
-      <button class={`flex-content-row-md justify-between ${styles['ac-element']} w-6/12`} onClick={handlerToggle}>
+      <button class={`flex-content-row-md justify-between ${styles['ac-element']} w-72 md:w-xl`} onClick={handlerToggle}>
         <p class={`${styles['ac-title']}`}>{label}</p>
         <ChevronDownIcon font-size="20" />
       </button>
       {
         toggle.value ?
-        <div class={`flex-content-row-md justify-between ${styles['ac-element']} w-6/12 h-fit`}>
+        <div class={`flex-content-row-md justify-between ${styles['ac-element']} w-72 md:w-xl`}>
           {children}
         </div>
         : null
@@ -28,10 +28,3 @@ export const Accordion = ({label, children}: Accordion) => {
     </div>
   )
 }
-
-// export const ToggleContent = ({children, ...rest}: ToggleContent) => {
-//   const { handlerToggle } = toggleSignal
-//   return (
-    
-//   )
-// }

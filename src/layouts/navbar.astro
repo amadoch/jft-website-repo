@@ -1,15 +1,18 @@
 ---
-import { Picture } from 'astro:assets'
+import { Image } from 'astro:assets'
 import { MenuIcon } from "@lucide/astro"
-import logo from '../assets/images/logo.jpg'
+import logo from '../assets/images/logo.webp'
 ---
 
 <header class="navbar">
   <div class="nv-logo">
-    <Picture
+    <Image
       src={logo}
-      alt="Logotipo de la unidad educativa estatal 'dr. josé francisco torrealba'"
-      formats={['avif', 'webp']}
+      width={logo.width}
+      height={logo.height}
+      alt="Logotipo del colegio estatal 'dr. josé francisco torrealba'"
+      format="webp"
+      priority
       class="logo"
     />
   </div>
@@ -69,7 +72,8 @@ import logo from '../assets/images/logo.jpg'
   .nv-title {
     @apply text-center
       text-base
-      capitalize;
+      capitalize
+      font-bold;
   }
 
   .nv-list > [class*="nv-item"] {
