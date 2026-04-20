@@ -9,18 +9,18 @@ import { Picture } from "astro:assets";
 <Layout>
   <div class="page-display">
     <div class="flex-content-lg mb-16">
-    <Picture
-      src={heroImg}
-      widths={[900, 1080]}
-      class="object-cover aspect-4/3 md:aspect-12/4"
-      priority
-      alt="Vista frontal del u.e.e 'dr. josé francisco torrealba'"
-    />
-    <h1 class="hero-title">U.E.E<br />Dr. José Francisco Torrealba</h1>
+      <Picture
+        src={heroImg}
+        widths={[900, 1080]}
+        class="object-cover aspect-4/3 md:aspect-12/4"
+        priority
+        alt="Vista frontal del u.e.e 'dr. josé francisco torrealba'"
+      />
+      <h1 class="hero-title">U.E.E<br />Dr. José Francisco Torrealba</h1>
     </div>
-    <section class="flex-content-lg items-center mb-8">
-      <h2 class="section-title">Formación Académica</h2>
-      <div class="flex-content-row-md not-md:flex-wrap w-full">
+    <section class="flex-content-lg section-box">
+      <h2 class="section-title self-start">Formación Académica</h2>
+      <div class="flex-content-row-md not-md:flex-wrap">
         <Picture
           src={frImgUno}
           alt="Jovenes celebrando promoción 53 del colegio"
@@ -29,17 +29,15 @@ import { Picture } from "astro:assets";
           priority
         />
         <hgroup class="flex-content-sm">
-          <h3 class="text-h4 self-start section-subtitle">
-            Educación Primaria
-          </h3>
-          <p>
+          <h3 class="text-h4 section-subtitle">Educación Primaria</h3>
+          <p class="rs-paragraph">
             Formación de jovenes con valores ciudadanos que buscan igualdad,
             conocimiento y respeto mutuo, involucrados desde una edad temprana
             en el desarrollo del entorno y la sociedad venezolana.
           </p>
         </hgroup>
       </div>
-      <div class="flex-content-row-md not-md:flex-wrap w-full">
+      <div class="flex-content-row-md not-md:flex-wrap">
         <Picture
           src={frImgDos}
           alt="Jovenes celebrando promoción 53 del colegio"
@@ -48,8 +46,8 @@ import { Picture } from "astro:assets";
           priority
         />
         <hgroup class="flex-content-sm">
-          <h3 class="text-h4 self-start section-subtitle">Preescolar</h3>
-          <p>
+          <h3 class="text-h4 section-subtitle">Preescolar</h3>
+          <p class="rs-paragraph">
             Formación desde la infancia temprana valores como: la cooperación,
             afecto, moralidad cumpliendo ciertas pautas de comportamiento dentro
             del ambiente social.
@@ -61,11 +59,11 @@ import { Picture } from "astro:assets";
         Oferta académica y requisitos para la inscripción
       </a>
     </section>
-    <section class="flex-content-lg">
-      <h2 class="section-title">Comunicados</h2>
+    <section class="flex-content-lg section-box">
+      <h2 class="section-title self-start">Comunicados</h2>
     </section>
-    <section class="flex-content-lg">
-      <h2 class="section-title">Calendario Académico</h2>
+    <section class="flex-content-lg section-box">
+      <h2 class="section-title self-start">Calendario Académico</h2>
       <div class="flex-content-md"></div>
       <button type="button" class="button text-sm md:text-base">
         Ver Calendario académico
@@ -81,11 +79,19 @@ import { Picture } from "astro:assets";
     @apply font-bold mb-8 text-mocha-900;
   }
 
+  .section-box {
+    @apply mb-8;
+  }
+
   .section-title {
-    @apply font-bold self-start text-mocha-900;
+    @apply font-bold text-mocha-900;
   }
 
   .section-subtitle {
     @apply font-bold text-roast-500;
+  }
+
+  .rs-paragraph {
+    @apply lg:w-[24lh] xl:w-[40lh];
   }
 </style>

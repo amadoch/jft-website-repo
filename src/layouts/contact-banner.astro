@@ -2,27 +2,21 @@
 import { PhoneIcon } from "@lucide/astro";
 import { getCollection } from "astro:content";
 
-const [contactoCollection]= await getCollection("contacto");
+const [contacto] = await getCollection('contacto')
 ---
 
 <header class="banner">
   <ul class="phone-list">
     {
-      contactoCollection.data.contactos.map(item => {
-      return (<li class="phone-item">
-        <PhoneIcon class="icon" size="20" />
-        <p>{item.telefono}</p>
-      </li>)
-      })
+      contacto.data.contactos.map((item) => (
+        <li class="phone-item">
+          <PhoneIcon class="icon" size="20" />
+          <p>{item.telefono}</p>
+        </li>
+      ))
     }
-    <li></li>
   </ul>
 </header>
-
-<!-- // <li class="phone-item">
-//   <PhoneIcon class="icon" size="20" />
-//   <p>{item.}</p>
-// </li>; -->
 
 <style>
   @reference "#app.css";
