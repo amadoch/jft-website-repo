@@ -1,20 +1,33 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/layout.astro";
-export const prerender = false
+import {StrapiBlocks} from '@sensinum/astro-strapi-blocks';
+export const prerender = false;
 
-const { slug } = Astro.params
-const comunicados = await getCollection('comunicadoCollection')
-const comunicado = comunicados.find((col) => col.id === slug)
+const { slug } = Astro.params;
+const comunicados = await getCollection("comunicadoCollection");
+const comunicado = comunicados.find((col) => col.id === slug);
 
-if(!comunicado) {
-  return Astro.redirect('/404')
+if (!comunicado) {
+  return Astro.redirect("/404");
 }
-
-console.log(comunicado)
 ---
 
 <Layout>
   <div class="page-display">
+    <header class="flex-content-lg mb-8">
+      <img
+        src={comunicado.data.imagen_destacada.url}
+        class="object-cover aspect-4/3 md:aspect-12/4"
+        alt={comunicado.data.imagen_destacada.alternativeText}
+      />
+      <h1 class="text-mocha-950">{comunicado.data.titulo}</h1>
+      <StrapiBlocks
+        data={comunicado.data.contenido}
+      />
+    </header>
+    <section>
+    </section>
+    <footer></footer>
   </div>
 </Layout>
