@@ -29,9 +29,7 @@
 		"wrangler": "^4.80.0"
 	},
 	"overrides": {
-		"vite": "^7",
-		"react": "npm:@preact/compat@latest",
-		"react-dom": "npm:@preact/compat@latest"
+		"vite": "^7"
 	},
 	"imports": {
 		"#app.css": "./src/styles/global.css"
