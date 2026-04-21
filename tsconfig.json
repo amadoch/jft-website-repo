@@ -12,8 +12,6 @@
     "types": [
       "./worker-configuration.d.ts",
       "node"
-    ],
-    "jsx": "react-jsx",
-    "jsxImportSource": "preact"
+    ]
   }
 }
