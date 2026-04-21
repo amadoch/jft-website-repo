@@ -1,18 +1,15 @@
 ---
-import { Image } from 'astro:assets'
 import { MenuIcon } from "@lucide/astro"
 import logo from '../assets/images/logo.webp'
 ---
 
 <header class="navbar">
   <div class="nv-logo">
-    <Image
-      src={logo}
+    <img
+      src={logo.src}
       width={logo.width}
       height={logo.height}
       alt="Logotipo del colegio estatal 'dr. josé francisco torrealba'"
-      format="webp"
-      priority
       class="logo"
     />
   </div>
@@ -47,7 +44,7 @@ import logo from '../assets/images/logo.webp'
   }
 
   .logo {
-    @apply object-contain aspect-4/3;
+    @apply object-contain aspect-8/5;
   }
 
   .nv-container {

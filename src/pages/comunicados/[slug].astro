@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/layout.astro";
-import {StrapiBlocks} from '@sensinum/astro-strapi-blocks';
+import { StrapiBlocks } from "@sensinum/astro-strapi-blocks";
 export const prerender = false;
 
 const { slug } = Astro.params;
@@ -21,13 +21,25 @@ if (!comunicado) {
         class="object-cover aspect-4/3 md:aspect-12/4"
         alt={comunicado.data.imagen_destacada.alternativeText}
       />
-      <h1 class="text-mocha-950">{comunicado.data.titulo}</h1>
-      <StrapiBlocks
-        data={comunicado.data.contenido}
-      />
+      <h1 class="text-mocha-900 text-center">{comunicado.data.titulo}</h1>
     </header>
     <section>
+      <StrapiBlocks
+        class="flex-content-sm flex-nowrap"
+        data={comunicado.data.contenido}
+        theme={{
+          extend: {
+            paragraph: {
+              block: ["md:w-[18lh] lg:w-[34lh] text-mocha-950 break-after-page"],
+              link: ["text-roast-600 hover:text-roast-400"],
+            },
+            heading: {
+              h1: ["hidden"],
+              block: ["md:w-[46rem] text-pinkish-400 break-after-page"]
+            }
+          },
+        }}
+      />
     </section>
-    <footer></footer>
   </div>
 </Layout>

@@ -3,7 +3,6 @@ import Layout from "../layouts/layout.astro";
 import frImgUno from "../assets/images/fr-img-uno.webp";
 import frImgDos from "../assets/images/fr-img-dos.webp";
 import heroImg from "../assets/images/hero-img.webp";
-import { Picture } from "astro:assets";
 import ComunicadoCard from "../components/comunicado-card.astro";
 import Card from "../components/card.astro";
 import { getCollection } from "astro:content";
@@ -13,11 +12,10 @@ const comunicados = await getCollection("comunicadoCollection");
 <Layout>
   <div class="page-display">
     <div class="flex-content-lg mb-16">
-      <Picture
-        src={heroImg}
-        widths={[900, 1080]}
+      <img
+        src={heroImg.src}
+        width={1080}
         class="object-cover aspect-4/3 md:aspect-12/4"
-        priority
         alt="Vista frontal del u.e.e 'dr. josé francisco torrealba'"
       />
       <h1 class="hero-title">U.E.E<br />Dr. José Francisco Torrealba</h1>
