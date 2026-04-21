@@ -114,9 +114,10 @@
         animate-duration-300;
     }
 
-    &:disabled {
+    &:disabled, &[aria-disabled=true] {
       @apply bg-pinkish-300
-        text-pinkish-100;
+        text-pinkish-100
+        pointer-events-none;
     }
   }
 

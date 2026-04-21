@@ -4,19 +4,17 @@ import Layout from "../../layouts/layout.astro";
 export const prerender = false
 
 const { slug } = Astro.params
-const comunicados = await getCollection('comunicado')
-const comunicado = comunicados.find((page) => page.id === slug)
+const comunicados = await getCollection('comunicadoCollection')
+const comunicado = comunicados.find((col) => col.id === slug)
 
 if(!comunicado) {
   return Astro.redirect('/404')
 }
 
 console.log(comunicado)
-console.log(slug)
 ---
 
 <Layout>
-  <pre>
-    {JSON.stringify(comunicado)}
-  </pre>
+  <div class="page-display">
+  </div>
 </Layout>

@@ -1,12 +1,14 @@
-import { generateCollections } from "@sensinum/astro-strapi-loader"
+import { strapiLoader } from "@sensinum/astro-strapi-loader"
+import { defineCollection } from "astro:content"
+import { comunicadoSchema } from "./models/comunicado.model"
+import { contactoSchema } from "./models/contacto.model"
 
-const strapiCollections = await generateCollections({
-  url: import.meta.env.CMS_URL,
-  token: import.meta.env.CMS_TOKEN,
-}, [
-  {
-    name: 'contacto',
-    query: {
+
+const contactoCollection = defineCollection({
+  loader: strapiLoader('contacto', {
+    url: import.meta.env.CMS_URL,
+    token: import.meta.env.CMS_TOKEN,
+  }, {
       fields: [
         'horario_apertura',
         'horario_cierre'
@@ -14,64 +16,33 @@ const strapiCollections = await generateCollections({
       populate: {
         contactos: true
       }
-    }
-  },
-  {
-    name: 'comunicados',
-    collectionName: 'comunicado',
+  }),
+  schema: contactoSchema
+})
+
+const comunicadoCollection = defineCollection({
+  loader: strapiLoader('comunicados', {
+    url: import.meta.env.CMS_URL,
+    token: import.meta.env.CMS_TOKEN,
     idGenerator(data) {
       return data.slug as string
     },
-    query: {
-      filters: {
-        categoria: {
-          $eq: 'comunicado'
-        }
-      },
-      pagination: {
-        start: 0,
-        limit: 10,
-      },
-    }
-  },
-  {
-    name: 'comunicados',
-    collectionName: 'aviso',
-    idGenerator(data) {
-      return data.slug as string
+  }, {
+    populate: {
+      imagen_destacada: {
+        fields: ['alternativeText', 'url'],
+      }
     },
-    query: {
-      filters: {
-        categoria: {
-          $eq: 'aviso'
-        }
-      },
-      pagination: {
-        start: 0,
-        limit: 10,
-      },
+    pagination: {
+      start: 0,
+      limit: 10
     }
-  },
-  {
-    name: 'comunicados',
-    collectionName: 'evento',
-    idGenerator(data) {
-      return data.slug as string
-    },
-    query: {
-      filters: {
-        categoria: {
-          $eq: 'evento'
-        }
-      },
-      pagination: {
-        start: 0,
-        limit: 10,
-      },
-    }
-  }
-])
+  }),
+  schema: comunicadoSchema
+})
+
 
 export const collections = {
-  ...strapiCollections
+  contactoCollection,
+  comunicadoCollection
 }

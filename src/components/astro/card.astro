@@ -1,0 +1,45 @@
+---
+interface Props {
+  titulo: string;
+  resumen?: string;
+  imgAlt: string | null;
+  imgSrc: string;
+}
+
+const { titulo, resumen, imgAlt, imgSrc } = Astro.props;
+---
+
+<section class="flex-content-lg my-4">
+  <div class="flex-content-row-sm flex-wrap">
+    <header>
+      <img
+        src={imgSrc}
+        alt={imgAlt}
+        width={227}
+        height={227}
+        class="aspect-3/4"
+      />
+    </header>
+    <span class="flex-content-md flex-wrap flex-4/6">
+      <h3 class="co-title">{titulo}</h3>
+      <p class="co-resume">
+        {resumen || ""}
+      </p>
+    </span>
+  </div>
+</section>
+
+<style>
+  @reference "#app.css";
+
+  .co-title {
+    @apply text-emphasis
+    text-mocha-950
+      font-semibold
+     self-start;
+  }
+
+  .co-resume {
+    @apply overflow-clip text-mocha-950;
+  }
+</style>

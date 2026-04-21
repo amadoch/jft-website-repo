@@ -4,6 +4,10 @@ import frImgUno from "../assets/images/fr-img-uno.webp";
 import frImgDos from "../assets/images/fr-img-dos.webp";
 import heroImg from "../assets/images/hero-img.webp";
 import { Picture } from "astro:assets";
+import ComunicadoCard from "../components/astro/comunicado-card.astro";
+import Card from "../components/astro/card.astro";
+import { getCollection } from "astro:content";
+const comunicados = await getCollection("comunicadoCollection");
 ---
 
 <Layout>
@@ -20,54 +24,38 @@ import { Picture } from "astro:assets";
     </div>
     <section class="flex-content-lg section-box">
       <h2 class="section-title self-start">Formación Académica</h2>
-      <div class="flex-content-row-md not-md:flex-wrap">
-        <Picture
-          src={frImgUno}
-          alt="Jovenes celebrando promoción 53 del colegio"
-          height={240}
-          format="webp"
-          priority
-        />
-        <hgroup class="flex-content-sm">
-          <h3 class="text-h4 section-subtitle">Educación Primaria</h3>
-          <p class="rs-paragraph">
-            Formación de jovenes con valores ciudadanos que buscan igualdad,
+      <Card
+        titulo={"Educación Primaria"}
+        resumen="Formación de jovenes con valores ciudadanos que buscan igualdad,
             conocimiento y respeto mutuo, involucrados desde una edad temprana
-            en el desarrollo del entorno y la sociedad venezolana.
-          </p>
-        </hgroup>
-      </div>
-      <div class="flex-content-row-md not-md:flex-wrap">
-        <Picture
-          src={frImgDos}
-          alt="Jovenes celebrando promoción 53 del colegio"
-          height={240}
-          format="webp"
-          priority
-        />
-        <hgroup class="flex-content-sm">
-          <h3 class="text-h4 section-subtitle">Preescolar</h3>
-          <p class="rs-paragraph">
-            Formación desde la infancia temprana valores como: la cooperación,
+            en el desarrollo del entorno y la sociedad venezolana."
+        imgSrc={frImgUno.src}
+        imgAlt="Jovenes celebrando promoción 53 del colegio"
+      />
+      <Card
+        titulo={"Preescolar"}
+        resumen="Formación desde la infancia temprana valores como: la cooperación,
             afecto, moralidad cumpliendo ciertas pautas de comportamiento dentro
-            del ambiente social.
-          </p>
-        </hgroup>
-      </div>
-
-      <a href="/formacion" class="button text-sm md:text-base">
-        Oferta académica y requisitos para la inscripción
-      </a>
+            del ambiente social."
+        imgSrc={frImgDos.src}
+        imgAlt="Jovenes celebrando promoción 53 del colegio"
+      />
+      <a href="/formacion" class="button text-emphasis"> Formación escolar </a>
     </section>
     <section class="flex-content-lg section-box">
       <h2 class="section-title self-start">Comunicados</h2>
-    </section>
-    <section class="flex-content-lg section-box">
-      <h2 class="section-title self-start">Calendario Académico</h2>
-      <div class="flex-content-md"></div>
-      <button type="button" class="button text-sm md:text-base">
-        Ver Calendario académico
-      </button>
+      {
+        comunicados.map((item) => (
+          <ComunicadoCard
+            titulo={item.data.titulo}
+            slug={item.data.slug}
+            resumen={item.data.resumen}
+            categoria={item.data.categoria}
+            imgUrl={item.data.imagen_destacada.url}
+            imgAlt={item.data.imagen_destacada.alternativeText}
+          />
+        ))
+      }
     </section>
   </div>
 </Layout>
@@ -89,9 +77,5 @@ import { Picture } from "astro:assets";
 
   .section-subtitle {
     @apply font-bold text-roast-500;
-  }
-
-  .rs-paragraph {
-    @apply lg:w-[24lh] xl:w-[40lh];
   }
 </style>

@@ -1,7 +1,28 @@
 ---
-import Layout from "../../layouts/layout.astro"
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/layout.astro";
+import ComunicadoCard from "../../components/astro/comunicado-card.astro";
+
+const comunicados = await getCollection("comunicadoCollection");
+
 ---
 
 <Layout>
-  <h1>Indice de comunicados</h1>
+  <div class="page-display">
+    <h1>Indice de comunicados</h1>
+    <section class="flex-content-lg">
+      {
+        comunicados.map((item) => (
+          <ComunicadoCard
+              titulo={item.data.titulo}
+              slug={item.data.slug}
+              resumen={item.data.resumen}
+              categoria={item.data.categoria}
+              imgUrl={item.data.imagen_destacada.url}
+              imgAlt={item.data.imagen_destacada.alternativeText}
+          />
+        ))
+      }
+    </section>
+  </div>
 </Layout>

@@ -2,10 +2,8 @@
 import Layout from "../layouts/layout.astro";
 import { getCollection } from "astro:content";
 
-const [contacto] = await getCollection("contacto");
+const [contacto] = await getCollection('contactoCollection');
 
-const apertura = contacto.data.horario_apertura as string;
-const cierre = contacto.data.horario_cierre as string;
 ---
 
 <Layout>
@@ -18,15 +16,15 @@ const cierre = contacto.data.horario_cierre as string;
         <h2 class="subtitle">Horario de atención</h2>
         <ul class="flex-content-sm">
           <li>Lunes a Viernes</li>
-          <li>{apertura.slice(0, 5)}</li>
-          <li>{cierre.slice(0, 5)}</li>
+          <li>{contacto.data.horario_apertura.slice(0, 5)}</li>
+          <li>{contacto.data.horario_cierre.slice(0, 5)}</li>
         </ul>
       </section>
       <section class="flex-content-md">
         <h2 class="subtitle">Números de contacto</h2>
         <ul class="flex-content-sm">
           {
-            contacto.data.contactos.map((item: any) => (
+            contacto.data.contactos.map((item) => (
               <li class="phone-item">
                 <p>{item.telefono}</p>
               </li>
