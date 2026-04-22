@@ -14,7 +14,7 @@ const { titulo, slug, categoria, resumen, imgAlt, imgUrl } = Astro.props;
 <article class="flex-content-lg my-4">
   <div class="flex-content-row-sm flex-wrap">
     <header>
-      <img src={imgUrl} alt={imgAlt} width={227} height={227} />
+      <img src={import.meta.env.CMS_URL + imgUrl} alt={imgAlt} width={227} height={227} />
     </header>
     <span class="flex-content-md flex-wrap flex-4/6">
       <h2 class="co-title">{titulo}</h2>

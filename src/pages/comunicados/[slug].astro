@@ -17,7 +17,7 @@ if (!comunicado) {
   <div class="page-display">
     <header class="flex-content-lg mb-8">
       <img
-        src={comunicado.data.cover.url}
+        src={import.meta.env.CMS_URL + comunicado.data.cover.url}
         class="object-cover aspect-4/3 md:aspect-12/4"
         alt={comunicado.data.cover.alternativeText}
       />

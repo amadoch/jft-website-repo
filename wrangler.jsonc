@@ -4,7 +4,8 @@
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "escuelajft",
+	"name": "jft-website-repo"
+jft-website-repo",
 	"compatibility_date": "2026-04-06",
 	"compatibility_flags": [
 		"nodejs_compat"
