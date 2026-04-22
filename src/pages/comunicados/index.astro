@@ -18,8 +18,8 @@ const comunicados = await getCollection("comunicadoCollection");
               slug={item.data.slug}
               resumen={item.data.resumen}
               categoria={item.data.categoria}
-              imgUrl={item.data.imagen_destacada.url}
-              imgAlt={item.data.imagen_destacada.alternativeText}
+              imgUrl={item.data.cover.url}
+              imgAlt={item.data.cover.alternativeText}
           />
         ))
       }

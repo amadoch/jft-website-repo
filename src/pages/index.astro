@@ -22,22 +22,26 @@ const comunicados = await getCollection("comunicadoCollection");
     </div>
     <section class="flex-content-lg section-box">
       <h2 class="section-title self-start">Formación Académica</h2>
-      <Card
-        titulo={"Educación Primaria"}
-        resumen="Formación de jovenes con valores ciudadanos que buscan igualdad,
+      <section class="flex-content-sm section-box">
+        <h3 class="section-subtitle">Educación Primaria</h3>
+        <span>
+          <p>
+            "Formación de jovenes con valores ciudadanos que buscan igualdad,
             conocimiento y respeto mutuo, involucrados desde una edad temprana
             en el desarrollo del entorno y la sociedad venezolana."
-        imgSrc={frImgUno.src}
-        imgAlt="Jovenes celebrando promoción 53 del colegio"
-      />
-      <Card
-        titulo={"Preescolar"}
-        resumen="Formación desde la infancia temprana valores como: la cooperación,
+          </p>
+        </span>
+      </section>
+      <section class="flex-content-sm section-box">
+        <h3 class="section-subtitle">Preescolar</h3>
+        <span>
+          <p>
+            "Formación desde la infancia temprana valores como: la cooperación,
             afecto, moralidad cumpliendo ciertas pautas de comportamiento dentro
             del ambiente social."
-        imgSrc={frImgDos.src}
-        imgAlt="Jovenes celebrando promoción 53 del colegio"
-      />
+          </p>
+        </span>
+      </section> 
       <a href="/formacion" class="button text-emphasis"> Formación escolar </a>
     </section>
     <section class="flex-content-lg section-box">
@@ -49,8 +53,8 @@ const comunicados = await getCollection("comunicadoCollection");
             slug={item.data.slug}
             resumen={item.data.resumen}
             categoria={item.data.categoria}
-            imgUrl={item.data.imagen_destacada.url}
-            imgAlt={item.data.imagen_destacada.alternativeText}
+            imgUrl={item.data.cover.url}
+            imgAlt={item.data.cover.alternativeText}
           />
         ))
       }

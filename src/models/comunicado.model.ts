@@ -5,7 +5,7 @@ export const comunicadoSchema = z.object({
   slug: z.string(),
   resumen: z.string(),
   contenido: z.any(),
-  imagen_destacada: z.object({
+  cover: z.object({
     alternativeText: z.string().nullable(),
     url: z.string()
   }),

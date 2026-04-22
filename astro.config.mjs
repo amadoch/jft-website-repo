@@ -40,5 +40,10 @@ export default defineConfig({
         ]
       }
     }
-  ]
+  ],
+
+  image: {
+    domains: ['cms.escuelaestataljosefranciscotorrealba.com'],
+    remotePatterns: [{ protocol: 'https' }]
+  }
 });

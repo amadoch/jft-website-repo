@@ -29,7 +29,7 @@ const comunicadoCollection = defineCollection({
     },
   }, {
     populate: {
-      imagen_destacada: {
+      cover: {
         fields: ['alternativeText', 'url'],
       }
     },
