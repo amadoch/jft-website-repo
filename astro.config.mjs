@@ -2,7 +2,6 @@
 import { defineConfig, fontProviders } from 'astro/config';
 import cloudflare from '@astrojs/cloudflare';
 import tailwindcss from '@tailwindcss/vite';
-import preact from '@astrojs/preact';
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,9 +11,6 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()],
-    ssr: {
-      noExternal: ['@preact/signals']
-    }
   },
 
   fonts: [
@@ -45,6 +41,4 @@ export default defineConfig({
       }
     }
   ],
-
-  integrations: [preact({compat: true})]
 });

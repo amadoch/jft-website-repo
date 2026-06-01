@@ -1,0 +1,50 @@
+---
+import logo from "../assets/images/logo.webp";
+import Image from "astro/components/Image.astro";
+---
+
+<footer
+  class="flex flex-col flex-nowrap justify-between p-12 gap-y-8 bg-roast text-mocha-light"
+>
+  <div class="flex flex-row flex-wrap justify-between gap-y-4">
+    <div class="flex flex-col gap-4.5 pb-2">
+      <Image
+        class="size-40 mx-auto"
+        src={logo}
+        alt="Logotipo de unidad educativa estatal 'Dr. José Francisco Torrealba'"
+        loading="eager"
+      />
+      <p class="font-bold">Numero de atención del cliente:</p>
+      <p>(+58) 0412-8981336</p>
+      <p class="font-bold">Dirección de ubicación física:</p>
+      <p>Avenida Circunvalación, sector Caja de Agua, El Limón, Aragua</p>
+    </div>
+    <ul class="flex flex-col gap-4.5 pb-2">
+      <p class="text-xl">Sitio web</p>
+      <li>
+        <a href="/">Principal</a>
+      </li>
+      <li>
+        <a href="/formación">Formación</a>
+      </li>
+      <li>
+        <a href="/contacto">Contacto</a>
+      </li>
+    </ul>
+    <ul class="flex flex-col gap-4.5 pb-2">
+      <p class="text-xl">Redes sociales</p>
+      <li>
+        <span></span>
+        <a href="">TikTok</a>
+      </li>
+      <li>
+        <span></span>
+        <a href="">Facebook</a>
+      </li>
+    </ul>
+  </div>
+  <p class="font-bold border-t pt-3">
+    <span></span>
+    Derechos reservados. U.E.E "Dr. José Francisco Torrealba"
+  </p>
+</footer>
