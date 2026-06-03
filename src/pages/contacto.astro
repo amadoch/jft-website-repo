@@ -1,7 +1,68 @@
 ---
 import Layout from "../layouts/layout.astro";
-
 ---
 
 <Layout>
+  <div class="mx-6 md:mx-12">
+    <h1 class="text-5xl font-semibold text-pinkish mb-6">Contactos</h1>
+    <div class="grid grid-cols-1 grid-rows-2 sm:grid-cols-2 sm:grid-rows-1">
+      <div class="flex flex-col gap-y-6">
+        <section class="flex flex-col gap-y-4.5">
+          <h2 class="text-2xl font-semibold text-roast">Horario de atención</h2>
+          <ul>
+            <li>Lunes a Viernes</li>
+            <li>7:00 AM hasta 12:00 PM</li>
+          </ul>
+        </section>
+        <section class="flex flex-col gap-y-4.5">
+          <h2 class="text-2xl font-semibold text-roast">Ubicación Fisica</h2>
+          <address>
+            Avenida Circunvalación Sector Caja de agua. El Limón, Aragua,
+            Venezuela
+          </address>
+        </section>
+        <section class="flex flex-col gap-y-4.5">
+          <h2 class="text-2xl font-semibold text-roast">
+            Canales de comunicación
+          </h2>
+          <div>
+            <p>Número de atención al cliente:</p>
+            <p>(+58) 0412-898.13.36</p>
+          </div>
+          <ul>
+            <p>Redes sociales:</p>
+            <li>
+              <span></span>
+              <a
+                href="https://www.tiktok.com/@uee.dr.jos.franci"
+                target="_blank"
+              >
+                TikTok
+              </a>
+            </li>
+            <li>
+              <span></span>
+              <a
+                href="https://www.facebook.com/profile.php?id=100009117793972"
+                target="_blank"
+              >
+                Facebook
+              </a>
+            </li>
+          </ul>
+        </section>
+      </div>
+      <section class="flex flex-col gap-y-4.5">
+        <h2 class="text-2xl font-semibold text-roast">Mapa</h2>
+        <iframe
+          class="aspect-video inline-3xs py-6 h-105 md:w-96 lg:w-125"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d981.347421982465!2d-67.63002777303163!3d10.310665310440179!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e803ba07ba154d7%3A0x5bc7256807548252!2sU.E.N.%20%22Dr.%20Jos%C3%A9%20Francisco%20Torrealba%22!5e0!3m2!1ses-419!2sve!4v1780496803906!5m2!1ses-419!2sve"
+          title="google maps widget"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </section>
+    </div>
+  </div>
 </Layout>
