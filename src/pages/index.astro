@@ -1,7 +1,81 @@
 ---
 import Layout from "../layouts/layout.astro";
+import { Image } from "astro:assets";
+import landing from "../assets/images/landing.webp";
+import whatsappLogo from "../assets/images/whatsapp-logo.webp";
+import heroBanner from "../assets/images/hero-banner.webp";
 ---
 
 <Layout>
-  <h1 class="bg-red-700">Hola</h1>
+  <div class="flex flex-col flex-nowrap gap-1">
+    <Image
+      src={heroBanner}
+      alt="Edificio de la unidad educativa estatal dr josé francisco torrealba"
+      loading="eager"
+      class="w-auto md:h-[56dvh] lg:h-[78dvh] aspect-video"
+    />
+    <h1 class="font-semibold text-roast text-5xl md:text-7xl -order-1">
+      U.E.E Dr José Franscico Torrealba
+    </h1>
+  </div>
+  <section>
+    <h2 class="text-5xl font-semibold text-pinkish m-3 mx-6 md:mx-12">
+      Formación Académica
+    </h2>
+    <div
+      class="grid grid-flow-col grid-rows-[repeat(3,minmax(0,1fr))_minmax(0,0.3fr)] md:grid-rows-3 md:grid-cols-2 mx-6 md:mx-12"
+    >
+      <div>
+        <h3 class="text-3xl font-semibold text-roast">Educación Primaria</h3>
+        <p class="sm:w-sm wrap-break-word">
+          Apoyar en la formación de jovenes con valores ciudadanos que buscan
+          igualdad, conocimiento y respeto mutuo, involucrados desde una edad
+          temprana en el desarrollo del entorno y la sociedad venezolana.
+        </p>
+      </div>
+      <div>
+        <h3 class="text-3xl font-semibold text-roast">Educación Preescolar</h3>
+        <p class="sm:w-sm wrap-break-word">
+          Apoyar en la formación desde la infancia temprana valores como: la
+          cooperación, afecto, moralidad cumpliendo ciertas pautas de
+          comportamiento dentro del ambiente social.
+        </p>
+      </div>
+      <a
+        href="/formacion"
+        class="py-1 md:py-2 px-3 md:px-6 font-bold bg-pinkish text-mocha-light hover:bg-roast text-center self-center"
+      >
+        Conocer más sobre la oferta educativa
+      </a>
+      <Image
+        src={landing}
+        loading="eager"
+        alt="Grupo escolar de 6to grado de la escuela Dr. José Francisco Torrealba"
+        class="aspect-video -order-1 md:row-span-2 md:order-1"
+      />
+    </div>
+  </section>
+  <section
+    class="grid grid-cols-1 md:grid-cols-2 gap-y-6 py-3 md:py-6 justify-items-center items-center bg-mocha"
+  >
+    <div class="flex flex-col flex-nowrap gap-4.5 m-4 text-roast">
+      <h2 class="text-2xl font-semibold">Contactanos</h2>
+      <p class="sm:w-sm wrap-break-word">
+        ¿Quieres que respondamos tus dudas? Entonces contamos con atención al
+        cliente vía Telefonica y WhatsApp abierto durante un horario matutino.
+      </p>
+      <a
+        href="/contacto"
+        class="py-1 md:py-2 px-3 md:px-6 font-bold bg-pinkish text-mocha-light hover:bg-roast self-start"
+      >
+        Comunícate con nosotros
+      </a>
+    </div>
+    <Image
+      src={whatsappLogo}
+      loading="lazy"
+      alt="Logotipo de WhatsApp"
+      class="aspect-square w-53 h-43 md:w-75 md:h-63"
+    />
+  </section>
 </Layout>

@@ -1,6 +1,9 @@
 ---
 import logo from "../assets/images/logo.webp";
 import Image from "astro/components/Image.astro";
+import Facebook from "~icons/fa6-brands/facebook";
+import Tiktok from "~icons/fa6-brands/tiktok";
+import Phone from "~icons/lucide/phone";
 ---
 
 <footer
@@ -12,10 +15,13 @@ import Image from "astro/components/Image.astro";
         class="size-40 mx-auto"
         src={logo}
         alt="Logotipo de unidad educativa estatal 'Dr. José Francisco Torrealba'"
-        loading="eager"
+        loading="lazy"
       />
       <p class="font-bold">Numero de atención del cliente:</p>
-      <p>(+58) 0412-8981336</p>
+      <p>
+        <Phone class="inline mr-2" />
+        (+58) 0412-8981336
+      </p>
       <p class="font-bold">Dirección de ubicación física:</p>
       <p>Avenida Circunvalación, sector Caja de Agua, El Limón, Aragua</p>
     </div>
@@ -34,25 +40,28 @@ import Image from "astro/components/Image.astro";
     <ul class="flex flex-col gap-4.5 pb-2">
       <p class="text-xl">Redes sociales</p>
       <li>
-        <span></span>
         <a
           href="https://www.tiktok.com/@uee.dr.jos.franci"
-          target="_blank">
+          target="_blank"
+          class="flex flex-row flex-nowrap gap-2"
+        >
+          <Tiktok />
           TikTok
         </a>
       </li>
       <li>
-        <span></span>
         <a
           href="https://www.facebook.com/profile.php?id=100009117793972"
-          target="_blank">
+          target="_blank"
+          class="flex flex-row flex-nowrap gap-2"
+        >
+          <Facebook />
           Facebook
         </a>
       </li>
     </ul>
   </div>
   <p class="font-bold border-t pt-3">
-    <span></span>
     Derechos reservados. U.E.E "Dr. José Francisco Torrealba"
   </p>
 </footer>
