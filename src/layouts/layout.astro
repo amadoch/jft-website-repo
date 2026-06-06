@@ -1,8 +1,7 @@
 ---
+import Header from './header.astro';
+import Footer from './footer.astro';
 import { Font } from "astro:assets";
-import ContactBanner from "./contact-banner.astro";
-import Copyright from "./copyright.astro";
-import Navbar from "./navbar.astro";
 import "../styles/global.css";
 ---
 
@@ -12,15 +11,17 @@ import "../styles/global.css";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Página informativa oficial de la escuela Dr. José Francisco Torrealba">
     <Font cssVariable="--font-kumbh-sans" />
     <title>U.E.E Dr José Francisco Torrealba</title>
   </head>
-  <body class="flex flex-col flex-nowrap min-h-dvh">
-    <ContactBanner />
-    <Navbar />
-    <main class="flex-11/12">
-      <slot />
-    </main>
-    <Copyright />
+  <body>
+    <div class="bg-mocha-light">
+      <Header />
+      <main>
+        <slot />
+      </main>
+      <Footer />
+    </div>
   </body>
 </html>

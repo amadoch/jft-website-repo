@@ -1,0 +1,36 @@
+---
+import logo from "../assets/images/logo.webp";
+import Image from "astro/components/Image.astro";
+---
+
+<header class="mb-8">
+  <div class="flex flex-row flex-nowrap gap-x-6 justify-center items-center">
+    <Image
+      class="size-30 md:size-1/12"
+      src={logo}
+      alt="Logotipo de unidad educativa estatal 'Dr. José Francisco Torrealba'"
+      loading="eager"
+    />
+    <div
+      class="flex flex-col flex-nowrap gap-y-3 md:gap-y-9 justify-center items-center"
+    >
+      <p class="text-center text-black font-bold">
+        Dr. José Francisco Torrealba
+      </p>
+      <nav class="flex flex-col gap-y-1 md:flex-row md:gap-x-2">
+        <a
+          class="py-1 md:py-2 px-3 md:px-6 bg-pinkish hover:bg-roast text-mocha-light"
+          href="/">Principal</a
+        >
+        <a
+          class="py-1 md:py-2 px-3 md:px-6 bg-pinkish hover:bg-roast text-mocha-light"
+          href="/formacion">Formación</a
+        >
+        <a
+          class="py-1 md:py-2 px-3 md:px-6 bg-pinkish hover:bg-roast text-mocha-light"
+          href="/contacto">Contacto</a
+        >
+      </nav>
+    </div>
+  </div>
+</header>

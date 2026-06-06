@@ -11,7 +11,10 @@
   "compilerOptions": {
     "types": [
       "./worker-configuration.d.ts",
-      "node"
-    ]
+      "node",
+      "unplugin-icons/types/astro"
+    ],
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
   }
 }

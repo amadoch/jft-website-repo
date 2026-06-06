@@ -1,43 +1,57 @@
-# Astro Starter Kit: Minimal
+# Página oficial de escuela estatal "Dr. José Francisco Torrealba"
 
-```sh
-pnpm create astro@latest -- --template minimal
-```
+## Estructura del proyecto
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+La estructura del proyecto se compone de esta manera
 
 ```text
 /
-├── public/
+├── public/ -> Assets Estáticos
 ├── src/
+│   └── components/ -> Piezas pequeñas y repetibles usados entre páginas: Bótones, Selectores, Inputs, Barras...
+│   └── layouts/ -> Disposiciones del sitio web: Header, Footer, Menu lateral...
+│   └── assets/ -> Assets Dínamicos, osea que Astro preprocesa y luego manda al sitio.
 │   └── pages/
-│       └── index.astro
+│       └── index
+│       └── 404
+│       └── contacto
+│       └── formación
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+La herramienta Astro busca por archivos `.astro` o `.md` en el directorio `src/pages/`.
+**Aviso:**
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Los nombres de cada uno de los archivos se exponen en la ruta del sitio web,
+es decir las rutas expuestas son:
 
-Any static assets, like images, can be placed in the `public/` directory.
+- / -> página principal, siempre inician en barra
+- /404 -> Páginas de error
+- /contacto -> Páginas de contactos
+- /formación -> Páginas de oferta académica
 
-## 🧞 Commands
+Los componentes y layouts no influyen mucho en el producto final, puedes usar componentes Astro
+o algún otro framework como React/Vue/Svelte/Preact/ u otras herramientas como HTMX/AlpineJs/Jquery;
+_Por lo general se recomienda a este sitio componentres Astro para mantenerlo simple._
+
+Assets estáticos (que no necesitan procesamiento) pueden ponerse en directorio `public/`.
+
+## Comandos para cargar el sistema
 
 All commands are run from the root of the project, from a terminal:
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+| `pnpm install`            | Instala las dependencias del sistema             |
+| `pnpm dev`                | Inicia un servidor local en `localhost:4321`     |
+| `pnpm build`              | Construye el sitio en producción en `./dist/`    |
+| `pnpm preview`            | Inicia en modo previsualización antes de públicar|
+| `pnpm astro ...`          | Carga comandos como `astro add`, `astro check`   |
+| `pnpm astro -- --help`    | Consigue información de CLI de Astro             |
+| `pnpm cf-typegen`         | (Re)genera los tipos de que usa el sitio web     |
 
-## 👀 Want to learn more?
+## Referencias (Documentos en línea)
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- [Framework Astro](https://docs.astro.build) y [Servidor público de Discord](https://astro.build/chat)
+- [Tailwind CSS](https://tailwindcss.com/docs/styling-with-utility-classes)
+- [Cloudflare Workers](https://developers.cloudflare.com/workers/) y  [Wrangler](https://developers.cloudflare.com/workers/wrangler/)

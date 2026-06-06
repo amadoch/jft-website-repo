@@ -1,69 +1,21 @@
 ---
 import Layout from "../layouts/layout.astro";
-import { MapPinXInsideIcon, CircleQuestionMarkIcon } from "@lucide/astro";
 ---
 
 <Layout>
-  <div class="page-display">
-    <header class="flex-content-sm flex-nowrap">
-      <hgroup class="title">
-        <h1>404</h1>
-        <MapPinXInsideIcon />
-      </hgroup>
-      <h2 class="subtitle">Disculpe...</h2>
-      <p>La página que usted busca no existe</p>
-    </header>
-    <section class="flex-content-lg">
-      <ul class="flex-content-md">
-        <li class="item">
-          <p>
-            Debes revisar que hayas escrito bien la dirección url; Aún si el
-            enlace es correcto, quizas el nombre del recurso o del sitio buscado
-            haya sido cambiado.
-          </p>
-        </li>
-        <li class="item">
-          <p>
-            Puede ser que el contenido, ya no se encuentre disponible en el
-            sitio indefinidamente.
-          </p>
-        </li>
-      </ul>
-    </section>
+  <div class="h-[38dvh]">
+    <div class="mx-auto flex flex-col flex-nowrap justify-center items-center gap-5">
+      <h1 class="text-pinkish text-5xl">Página no econtrada</h1>
+      <p class="text-roast">
+        La dirección que acabas de ingresar no dirige a ninguna parte del sitio
+        web...
+      </p>
+      <a
+        href="/"
+        class="py-1 md:py-2 px-3 md:px-6 bg-pinkish hover:bg-roast text-mocha-light"
+      >
+        Volver a la página principal
+      </a>
+    </div>
   </div>
 </Layout>
-
-<style>
-  @reference "#app.css";
-
-  .title {
-    @apply flex
-      flex-row
-      flex-nowrap
-      gap-x-0.5
-      font-bold
-      text-mocha-950;
-  }
-
-  .subtitle {
-    @apply mb-2
-    font-bold
-    text-pinkish-600;
-  }
-
-  .subtitle + p {
-    @apply text-pinkish-400;
-  }
-
-  .item {
-    @apply flex
-      flex-row
-      flex-wrap
-      items-center
-      gap-x-4
-      px-8
-      text-balance
-      whitespace-pre-line
-      text-roast-500;
-  }
-</style>

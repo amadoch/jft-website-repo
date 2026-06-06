@@ -2,15 +2,21 @@
 import { defineConfig, fontProviders } from 'astro/config';
 import cloudflare from '@astrojs/cloudflare';
 import tailwindcss from '@tailwindcss/vite';
+import Icons from 'unplugin-icons/vite';
 
 // https://astro.build/config
 export default defineConfig({
   adapter: cloudflare({    
-    imageService: 'cloudflare',
+    imageService: 'compile',
   }),
 
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [
+      tailwindcss(),
+      Icons({
+        compiler: 'astro'
+      })
+    ],
   },
 
   fonts: [
@@ -41,9 +47,4 @@ export default defineConfig({
       }
     }
   ],
-
-  image: {
-    domains: ['cms.escuelaestataljosefranciscotorrealba.com'],
-    remotePatterns: [{ protocol: 'https' }]
-  }
 });

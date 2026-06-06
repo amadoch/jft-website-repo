@@ -3,48 +3,66 @@ import Layout from "../layouts/layout.astro";
 ---
 
 <Layout>
-  <div class="page-display">
-  <div class="flex-content-lg items-start">
-    <header>
-      <h1 class="title">Estudios</h1>
-    </header>
-    <section class="flex-content-md">
-      <h2 class="subtitle">Educación<br />Preescolar</h2>
-      Esta etapa dirigida a niños y niñas desde los 3 años hasta
-      los 6 años de edad cumplidos o al ingreso de primer grado escolar,
-      se enfoca en fortalecer el proceso de socialización propia en el
-      niño(a) para permitir una integración social sana, así mismo, se
-      busca el aprendizaje continuo de los aspectos integrales (higiene,
-      alimentación, pedagogía) presentes en el individuo.
-      Con el objetivo de apoyar en la formación desde la infancia temprana
-      valores como: la cooperación, afecto, moralidad cumpliendo ciertas
-      pautas de comportamiento dentro del ambiente social.
+  <h1 class="text-5xl font-semibold text-pinkish mb-6 mx-6 md:mx-12">
+    Formación académica
+  </h1>
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-2 items-center gap-6 mb-2 mx-6 md:mx-12"
+  >
+    <section class="col-span-full border-mocha border-2 border-dashed p-3 flex flex-nowrap flex-col gap-y-4.5">
+      <h2 class="text-3xl text-roast font-semibold underline decoration-pinkish-light">
+        Requisitos para seguir el proceso de inscripción
+      </h2>
+      <ul class="text-roast list-disc flex flex-col flex-nowrap gap-3 px-4">
+        <li>
+          <p>Fotocopia de la partida de nacimiento</p>
+        </li>
+        <li>
+          <p>Fotocopia de la cédula de identidad del representante</p>
+        </li>
+        <li>
+          <p>Foto tamaño carnet del representante</p>
+        </li>
+        <li>
+          <p>Foto tamaño carnet del alumno</p>
+        </li>
+        <li>
+          <p>Tarjeta de Vacunas</p>
+        </li>
+      </ul>
     </section>
-    <section class="flex-content-md">
-      <h2 class="subtitle">Educación<br />Primaria</h2>
-      Esta etapa dirigida a niños y niñas desde los 6 años hasta
-      los 12 años de edad cumplidos o al ingreso de primer año bachillerato,
-      se enfoca en el crecimiento del aprendizaje y la aplicación de nuevos 
-      conocimientos teóricos, busca también la enseñanza de habilidades
-      sociales y practicas necesarios para desenvolverse dentro del entorno.
-      Con el objetivo de apoyar en la formación de jovenes con valores ciudadanos
-      que buscan igualdad, conocimiento y respeto mutuo, involucrados desde
-      una edad temprana en el desarrollo del entorno y la sociedad venezolana.
+    <section>
+      <h2 class="text-2xl text-roast font-semibold">Educación Preescolar</h2>
+      <p class="lg:w-md wrap-break-word">
+        Esta etapa dirigida a niños y niñas desde los 3 años hasta los 6 años de
+        edad cumplidos o al ingreso de primer grado escolar, se enfoca en
+        fortalecer el proceso de socialización propia en el niño(a) para
+        permitir una integración social sana, así mismo, se busca el aprendizaje
+        continuo de los aspectos integrales (higiene, alimentación, pedagogía)
+        presentes en el individuo.
+      </p>
+      <h3 class="text-xl text-roast font-semibold mt-3">Objetivos</h3>
+      <p class="lg:w-md wrap-break-word">
+        Con el objetivo de apoyar en la formación desde la infancia temprana
+        valores como: la cooperación, afecto, moralidad cumpliendo ciertas
+        pautas de comportamiento dentro del ambiente social.
+      </p>
     </section>
-  </div>
+    <section>
+      <h2 class="text-2xl text-roast font-semibold">Educación Primaria</h2>
+      <p class="lg:w-md wrap-break-word">
+        Esta etapa dirigida a niños y niñas desde los 6 años hasta los 12 años
+        de edad cumplidos o al ingreso de primer año bachillerato, se enfoca en
+        el crecimiento del aprendizaje y la aplicación de nuevos conocimientos
+        teóricos, busca también la enseñanza de habilidades sociales y practicas
+        necesarios para desenvolverse dentro del entorno.
+      </p>
+      <h3 class="text-xl text-roast font-semibold mt-3">Objetivo</h3>
+      <p class="lg:w-md wrap-break-word">
+        Apoyar en la formación de jovenes con valores ciudadanos que buscan
+        igualdad, conocimiento y respeto mutuo, involucrados desde una edad
+        temprana en el desarrollo del entorno y la sociedad venezolana.
+      </p>
+    </section>
   </div>
 </Layout>
-
-<style>
-  @reference "#app.css";
-
-  .title {
-    @apply font-bold
-      text-mocha-950;
-  }
-
-  .subtitle {
-    @apply font-bold
-      text-mocha-950;
-  }
-</style>
