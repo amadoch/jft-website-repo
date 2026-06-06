@@ -7,7 +7,8 @@ import Icons from 'unplugin-icons/vite';
 // https://astro.build/config
 export default defineConfig({
   adapter: cloudflare({    
-    imageService: { build: 'compile', runtime: 'cloudflare-binding' }
+    imageService: {build: 'compile', runtime: 'passthrough'},
+    prerenderEnvironment: 'node'
   }),
 
   vite: {
